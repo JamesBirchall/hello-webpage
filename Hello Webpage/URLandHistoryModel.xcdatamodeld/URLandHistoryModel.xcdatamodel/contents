@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="URLRequested" representedClassName="URLRequested" syncable="YES" codeGenerationType="class">
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="responses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="URLResponses" inverseName="request" inverseEntity="URLResponses" syncable="YES"/>
+    </entity>
+    <entity name="URLResponses" representedClassName="URLResponses" syncable="YES" codeGenerationType="class">
+        <attribute name="firstPayloadSizeInBytes" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="responseCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="responseDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="responseDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="request" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="URLRequested" inverseName="responses" inverseEntity="URLRequested" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="URLRequested" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="URLResponses" positionX="-54" positionY="-9" width="128" height="120"/>
+    </elements>
+</model>
